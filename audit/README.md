@@ -90,8 +90,8 @@ It is highly recommended to add `Transfer(0x0, msg.sender, INITIAL_SUPPLY);` eve
   - [x] Fixed [791425](https://github.com/zipperglobal/zipt_token/commit/791425db4b95fbb21bda958aa81e2aa666335c8b)
 
 
-- **Checksum addresses before sending tokens** - `Best practice` <br>
-We recommend validating addresses are in the correct format to avoid any unforeseen problems with sending tokens to the correct addresses when passing in data from ziptc.txt to deploy_zipt.js[View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/3)
+- **Checksum addresses before sending tokens** - `Enhancement` <br>
+We recommend validating addresses are in the correct format to avoid any unforeseen problems with sending tokens to the correct addresses when passing in data from ziptc.txt to deploy_zipt.js [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/3)
   - [x] Fixed [57103b](https://github.com/zipperglobal/zipt_token/commit/57103b701e18614a13f5979d44c3657af515c5c0)
   
 ### Moderate
