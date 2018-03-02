@@ -85,11 +85,15 @@ The audit report is focused on the following key areas - though this is not an e
 - **Unnecessary gas spent when avoiding double distribution** - `Best practice` [Lines 23](https://github.com/BlockchainLabsNZ/zipper-contracts/blob/f5fca30589042cffe83ee140c91ae6133de58ab5/contracts/ZipToken.sol#L23)<br>There is a check if the account has a zero balance. The cost of each check is a 400 gas. Is there any business reason for that? We assumed that this check was implemented to avoid double sending to the account. Consider the following scenario: - The function called twice and between that calls (highly unlikely) the malicious actor transferred tokens to another ... [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/2)
 	- [x] Fixed [3ca6051a](https://github.com/zipperglobal/zipt_token/commit/3ca6051a9c3b2b6b50d5799297c8f91a838b81b3)
 
-
 - **Add Transfer event to ZipToken after minting tokens** - `Best practice` <br>
 It is highly recommended to add `Transfer(0x0, msg.sender, INITIAL_SUPPLY);` event beneath the following line number: [#L15](https://github.com/BlockchainLabsNZ/zipper-contracts/blob/master/contracts/ZipToken.sol#L15]) The reason for this is so that token transfers can be seen on Etherscan and other block explorers... [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/1)
   - [x] Fixed [791425](https://github.com/zipperglobal/zipt_token/commit/791425db4b95fbb21bda958aa81e2aa666335c8b)
 
+
+- **Checksum addresses before sending tokens** - `Best practice` <br>
+We recommend validating addresses are in the correct format to avoid any unforeseen problems with sending tokens to the correct addresses when passing in data from ziptc.txt to deploy_zipt.js[View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/3)
+  - [x] Fixed [57103b](https://github.com/zipperglobal/zipt_token/commit/57103b701e18614a13f5979d44c3657af515c5c0)
+  
 ### Moderate
 - None found
 
