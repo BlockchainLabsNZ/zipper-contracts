@@ -89,11 +89,20 @@ The audit report is focused on the following key areas - though this is not an e
 It is highly recommended to add `Transfer(0x0, msg.sender, INITIAL_SUPPLY);` event beneath the following line number: [#L15](https://github.com/BlockchainLabsNZ/zipper-contracts/blob/master/contracts/ZipToken.sol#L15]) The reason for this is so that token transfers can be seen on Etherscan and other block explorers... [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/1)
   - [x] Fixed [791425](https://github.com/zipperglobal/zipt_token/commit/791425db4b95fbb21bda958aa81e2aa666335c8b)
 
-
 - **Checksum addresses before sending tokens** - `Enhancement` <br>
 We recommend validating addresses are in the correct format to avoid any unforeseen problems with sending tokens to the correct addresses when passing in data from ziptc.txt to deploy_zipt.js [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/3)
   - [x] Fixed [57103b](https://github.com/zipperglobal/zipt_token/commit/57103b701e18614a13f5979d44c3657af515c5c0)
+
+- **Variable is declared but not used** - `Best practices`, `Question` <br>
+Check if the `bool public filled = false;` is redundant. [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/4)
   
+- **deploy_zipt.js - variable is declared but not used** - `Correctness` <br>
+BATCH_SIZE never used but another variable with the same functionality is declared [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/5)
+  
+- **Optimal gas prices for deploy_zipt.js** - `Best practices` <br>
+ it is worth to check the gas price right before running deploy_zipt.js to avoid both overspending and crash because of low gas price. [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/6)
+  
+
 ### Moderate
 - None found
 
