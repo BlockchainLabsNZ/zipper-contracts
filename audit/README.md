@@ -106,7 +106,7 @@ We recommend validating addresses are in the correct format to avoid any unfores
 <br>
 
 ## Observations
-As a part of the deployment of the audited smart contracts the Zipper team will use Javascript to both deploy and distrubte the Zipper token. While this process will decrease the amount of gas required, it requires off-chain collection and processing of user data that may not be as immutable as an on-chain approach.  
+As a part of the deployment of the audited smart contracts the Zipper team will use Javascript to both deploy and distribute the Zipper token. While this process will decrease the amount of gas required, it requires off-chain collection and processing of user data that may not be as immutable as an on-chain approach.  
 
 <br>
 
