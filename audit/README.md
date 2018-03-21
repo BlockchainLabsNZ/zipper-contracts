@@ -20,7 +20,7 @@ There is also javascript used to run the contract functions:
 <br>
 
 ## Focus areas
-The audit report is focused on the following key areas - though this is not an exhaustive list.
+The audit report focuses on the following key areas, although this list is not exhaustive.
 
 
 ### Correctness
@@ -82,7 +82,7 @@ The audit report is focused on the following key areas - though this is not an e
 </table>
 
 ### Minor
-- **Unnecessary gas spent when avoiding double distribution** - `Best practice` [Lines 23](https://github.com/BlockchainLabsNZ/zipper-contracts/blob/f5fca30589042cffe83ee140c91ae6133de58ab5/contracts/ZipToken.sol#L23)<br>There is a check if the account has a zero balance. The cost of each check is a 400 gas. Is there any business reason for that? We assumed that this check was implemented to avoid double sending to the account. Consider the following scenario: - The function called twice and between that calls (highly unlikely) the malicious actor transferred tokens to another ... [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/2)
+- **Unnecessary gas spent when avoiding double distribution** - `Best practice` [Lines 23](https://github.com/BlockchainLabsNZ/zipper-contracts/blob/f5fca30589042cffe83ee140c91ae6133de58ab5/contracts/ZipToken.sol#L23)<br>There is a check if the account has a zero balance. The cost of each check is 400 gas. Is there any business reason for that? We assumed that this check was implemented to avoid double sending to the account. Consider the following scenario: - The function called twice and between the calls (highly unlikely) the malicious actor transferred tokens to another ... [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/2)
 	- [x] Fixed [3ca6051a](https://github.com/zipperglobal/zipt_token/commit/3ca6051a9c3b2b6b50d5799297c8f91a838b81b3)
 
 - **Add Transfer event to ZipToken after minting tokens** - `Best practice` <br>
@@ -100,7 +100,7 @@ Check if the `bool public filled = false;` is redundant. [View on GitHub](https:
 BATCH_SIZE never used but another variable with the same functionality is declared [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/5)
   
 - **Optimal gas prices for deploy_zipt.js** - `Best practices` <br>
- it is worth to check the gas price right before running deploy_zipt.js to avoid both overspending and crash because of low gas price. [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/6)
+It is worth checking the gas price right before running deploy_zipt.js to avoid both overspending and crash because of low gas price. [View on GitHub](https://github.com/BlockchainLabsNZ/zipper-contracts/issues/6)
   
 
 ### Moderate
@@ -115,7 +115,7 @@ BATCH_SIZE never used but another variable with the same functionality is declar
 <br>
 
 ## Observations
-As a part of the deployment of the audited smart contracts the Zipper team will use Javascript to both deploy and distribute the Zipper token. While this process will decrease the amount of gas required, it requires off-chain collection and processing of user data that may not be as immutable as an on-chain approach.  
+As a part of the deployment of the audited smart contracts, the Zipper team will use Javascript to both deploy and distribute the Zipper token. While this process will decrease the amount of gas required, it requires off-chain collection and processing of user data that may not be as immutable as an on-chain approach.  
 
 <br>
 
@@ -124,7 +124,7 @@ The developers demonstrated an understanding of Solidity and smart contracts. Th
 
 We took part in carefully reviewing all source code provided, including both static and dynamic testing methodology. 
 
-Overall we consider the resulting contracts following the audit feedback period adequate and have not identified any potential vulnerabilities. This contract has a low level risk of ETH and ZIPT being hacked or stolen from the inspected contracts.
+Overall, following the audit feedback period, we consider the resulting contracts adequate and have not identified any potential vulnerabilities. This contract has a low level risk of ETH and ZIPT being hacked or stolen from the inspected contracts.
 
 <hr>
 
